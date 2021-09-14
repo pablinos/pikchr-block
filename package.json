@@ -1,0 +1,27 @@
+{
+	"name": "pikchr-block",
+	"version": "0.1.0",
+	"description": "A Gutenberg block to render Pikchr",
+	"author": "Paul Bunkham",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build --config node_modules/@wordpress/scripts/config/webpack.config.js --config webpack-extra.config.js --merge",
+		"build:wasm": "EM_NODE_JS=\"$EMSDK_NODE\" emcc -O3 lib/pikchr.c -o lib/pikchr.js -s EXPORTED_FUNCTIONS='[\"_pikchr\",\"_free\",\"_malloc\"]' -s EXPORTED_RUNTIME_METHODS='[\"stringToUTF8\",\"lengthBytesUTF8\",\"UTF8ToString\"]' -s EXPORT_ES6=1 -s MODULARIZE=1 -s ENVIRONMENT='web'",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"start": "wp-scripts start --config node_modules/@wordpress/scripts/config/webpack.config.js --config webpack-extra.config.js --merge",
+		"packages-update": "wp-scripts packages-update"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^7.0.1",
+		"@wordpress/blocks": "^11.0.1",
+		"@wordpress/i18n": "^4.2.1"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^4.1.1",
+		"@wordpress/scripts": "^18.0.0",
+		"file-loader": "^6.2.0"
+	}
+}

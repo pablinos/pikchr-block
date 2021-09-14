@@ -1,0 +1,25 @@
+{
+	"apiVersion": 2,
+	"name": "create-block/pikchr",
+	"version": "0.1.0",
+	"title": "Pikchr",
+	"category": "widgets",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"pikchr": {
+			"type": "string"
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "div"
+		}
+    },
+	"textdomain": "pikchr",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
