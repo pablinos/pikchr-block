@@ -1,16 +1,16 @@
 <?php
 /**
  * Plugin Name:       Pikchr
- * Description:       Example block written with ESNext standard and JSX support – build step required.
+ * Description:       A block that renders Pikchr code to SVG
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           0.1.0
- * Author:            The WordPress Contributors
+ * Author:            Paul Bunkham
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       pikchr
  *
- * @package           create-block
+ * @package			  pikchr-block
  */
 
 /**
@@ -20,7 +20,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/writing-your-first-block-type/
  */
-function create_block_pikchr_block_init() {
+function pikchr_block_init() {
 	register_block_type( __DIR__ );
 }
-add_action( 'init', 'create_block_pikchr_block_init' );
+add_action( 'init', 'pikchr_block_init' );
